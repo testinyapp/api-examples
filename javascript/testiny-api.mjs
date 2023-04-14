@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 /** Testiny API library */
 const TESTINY_PROD_URL = "https://app.testiny.io/";
 let testinyBaseUrl = process.env.TESTINY_BASEURL ?? TESTINY_PROD_URL;
@@ -8,7 +10,7 @@ let testinyApiKey = process.env.TESTINY_APIKEY;
  * Defaults to using the TESTINY_APIKEY and TESTINY_BASEURL env var (or https://app.testiny.io/ if empty) 
 */
 export const testinyApi = (apiKeyOpt, baseUrlOpt) => {
-    if (apiKeyOpt) testinyApiKey = apiKey.toString().trim();
+    if (apiKeyOpt) testinyApiKey = apiKeyOpt.toString().trim();
     if (baseUrlOpt) testinyBaseUrl = new URL(baseUrlOpt).toString();
     return {
         projectId: 0,

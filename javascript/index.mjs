@@ -2,9 +2,11 @@ import { testinyApi } from "./testiny-api.mjs";
 
 const testiny = testinyApi();
 
-await testiny.selectProject("My Project");
-const testRun = await testiny.getTestRun("Release-Test 1.2.3");
+await testiny.selectProject("My Demo Project");
+const testRun = await testiny.getTestRun("Staging Review 2");
+console.log(testRun);
 const cases = await testiny.getTestCasesForRun(testRun);
+console.log(cases);
 
 await testiny.updateResultsForRun(testRun, [
     [cases[0].id, "BLOCKED"],

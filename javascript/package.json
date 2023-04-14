@@ -2,10 +2,13 @@
   "name": "testiny-api-examples",
   "version": "1.0.0",
   "description": "",
-  "main": "testiny.mjs",
+  "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.mjs"
   },
   "author": "testiny",
-  "license": "CC0"
+  "license": "CC0",
+  "dependencies": {
+    "node-fetch": "3.3.1"
+  }
 }
